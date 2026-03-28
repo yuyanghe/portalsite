@@ -3,25 +3,48 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #050b1a;
+  --foreground: #f1f5f9;
+  --glass-border: rgba(148, 163, 184, 0.12);
+  --glass-bg: rgba(15, 23, 42, 0.45);
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply antialiased tracking-wide leading-relaxed;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .animate-in-delay-1 {
+    animation-delay: 0.1s;
+    opacity: 0;
+  }
+  .animate-in-delay-2 {
+    animation-delay: 0.2s;
+    opacity: 0;
+  }
+  .animate-in-delay-3 {
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  .animate-in-delay-4 {
+    animation-delay: 0.4s;
+    opacity: 0;
+  }
+  .animate-in-delay-5 {
+    animation-delay: 0.5s;
+    opacity: 0;
+  }
+
+  .glass-panel {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
   }
 }
