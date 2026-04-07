@@ -27,7 +27,7 @@ const modelAnchors = [
 
 const companyLinks = [
   { href: securityBase, label: "大模型安全网关" },
-  { href: modelBase, label: "统一模型转发" },
+  { href: modelBase, label: "大模型聚合平台" },
 ] as const;
 
 type HeaderProps = {
@@ -73,7 +73,7 @@ export function Header({ variant = "company" }: HeaderProps) {
                 ? "企业级 AI 基础设施"
                 : variant === "security-gateway"
                   ? "安全网关"
-                  : "统一转发"}
+                  : "聚合平台"}
             </span>
           </span>
         </Link>

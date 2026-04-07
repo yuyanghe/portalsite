@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     template: "%s · 哲玄科技",
   },
   description:
-    "哲玄科技提供大模型企业安全网关（私有化合规）与企业级统一模型转发（OpenAI 兼容托管）两大产品线。",
+    "哲玄科技提供大模型企业安全网关（私有化合规）与大模型聚合平台（OpenAI 兼容托管）两大产品线。",
 };
 
 export default function RootLayout({

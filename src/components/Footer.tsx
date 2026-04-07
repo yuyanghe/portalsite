@@ -25,7 +25,7 @@ const modelLinks = [
 const companyLinks = [
   { href: "/", label: "首页" },
   { href: securityBase, label: "大模型安全网关" },
-  { href: modelBase, label: "统一模型转发" },
+  { href: modelBase, label: "大模型聚合平台" },
   { href: "/#contact", label: "联系" },
 ] as const;
 
@@ -46,11 +46,11 @@ export function Footer({ variant = "company" }: FooterProps) {
       ? "哲玄科技 · 企业级 AI 基础设施与网关服务"
       : variant === "security-gateway"
         ? "大模型企业安全网关"
-        : "企业级大模型统一转发服务";
+        : "大模型聚合平台";
 
   const blurb =
     variant === "company"
-      ? "为多模型时代提供可私有化部署的安全网关与托管式统一 API 转发能力。"
+      ? "为多模型时代提供可私有化部署的安全网关与托管式大模型聚合平台能力。"
       : variant === "security-gateway"
         ? "面向金融、政务及强合规行业的私有化大模型安全网关。"
         : "OpenAI 兼容端点，一端触达多家顶级与国产模型。";

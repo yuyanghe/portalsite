@@ -22,10 +22,10 @@ const products = [
   },
   {
     slug: "/products/model-gateway",
-    title: "企业级大模型统一转发",
+    title: "大模型聚合平台",
     subtitle: "OpenAI 兼容 · 多端点 · 托管服务",
     description:
-      "类似 OpenRouter 的统一 API 出口：单一 Base URL 与密钥即可接入全球与国内主流大模型，由哲玄托管高可用转发、路由与健康检查，您专注业务集成。",
+      "类似 OpenRouter 的聚合型 API：单一 Base URL 与密钥即可接入全球与国内主流大模型，由哲玄托管高可用接入、智能路由与健康检查，您专注业务集成。",
     icon: Layers,
     accent: "from-safe/20 to-safe/5",
     border: "border-safe/25",
@@ -46,10 +46,10 @@ export function CompanyHome() {
             <h1 className="mt-6 max-w-3xl text-balance text-4xl font-semibold tracking-wide text-slate-50 sm:text-5xl lg:text-6xl lg:leading-[1.08]">
               企业级 AI 网关
               <span className="text-finance">基础设施</span>
-              与托管转发服务
+              与聚合平台服务
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-relaxed tracking-wide text-slate-400 sm:text-xl">
-              我们提供可私有化的安全合规网关与云端统一模型转发两条产品线，助您在多模型时代同时守住边界、控住成本、缩短集成路径。
+              我们提供可私有化的安全合规网关与云端大模型聚合平台两条产品线，助您在多模型时代同时守住边界、控住成本、缩短集成路径。
             </p>
           </MotionReveal>
 
@@ -110,7 +110,7 @@ export function CompanyHome() {
                 商务与方案咨询
               </h2>
               <p className="mt-4 text-slate-400 leading-relaxed tracking-wide">
-                无论需要私有化安全网关评估，还是统一转发的用量与报价，均可通过邮件联系我们；我们会在工作日尽快回复。
+                无论需要私有化安全网关评估，还是大模型聚合平台的用量与报价，均可通过邮件联系我们；我们会在工作日尽快回复。
               </p>
               <div className="mt-8 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:justify-center">
                 <a

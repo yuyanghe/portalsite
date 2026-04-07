@@ -6,7 +6,7 @@ import { SiteBackground } from "@/components/SiteBackground";
 
 export const metadata: Metadata = {
   description:
-    "哲玄科技：企业级大模型安全网关与统一模型转发服务，助力多模型接入、合规治理与成本可控。",
+    "哲玄科技：企业级大模型安全网关与大模型聚合平台，助力多模型接入、合规治理与成本可控。",
 };
 
 export default function Home() {

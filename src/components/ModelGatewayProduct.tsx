@@ -22,7 +22,7 @@ const values = [
     body: "在统一 OpenAI 兼容协议下，按模型 ID 切换 GPT-4、Claude、DeepSeek 及国内主流模型，无需为每家厂商维护一套接入与鉴权逻辑。",
   },
   {
-    title: "托管高可用转发",
+    title: "托管高可用接入",
     body: "由哲玄运维多区域接入与链路优化，降低自建代理与限流器的研发与运维负担；支持健康检查与自动降级策略的可配置化。",
   },
   {
@@ -69,13 +69,13 @@ export function ModelGatewayProduct() {
                 托管服务 · OpenAI 兼容
               </p>
               <h1 className="mt-5 max-w-4xl text-balance text-4xl font-semibold tracking-wide text-slate-50 sm:text-5xl lg:text-[3.1rem] lg:leading-tight">
-                企业级大模型
-                <span className="text-safe">统一转发</span>
+                企业级
+                <span className="text-safe">大模型聚合平台</span>
                 <br className="hidden sm:block" />
-                像 OpenRouter，为您的业务量身定制
+                对标 OpenRouter，为您的业务量身定制
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed tracking-wide text-slate-400">
-                哲玄提供托管式统一 API 出口：单一协议接入多家模型，内置路由、计量与账单。适合希望快速扩展模型谱系、又不想单独对接每一家云厂商的团队。
+                哲玄提供托管式聚合 API 出口：单一协议接入多家模型，内置路由、计量与账单。适合希望快速扩展模型谱系、又不想单独对接每一家云厂商的团队。
               </p>
             </MotionReveal>
             <MotionReveal delay={0.12} className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -103,8 +103,8 @@ export function ModelGatewayProduct() {
             <MotionReveal>
               <SectionHeader
                 eyebrow="核心价值"
-                title="为什么需要统一转发层"
-                description="多模型并行试验已是常态，但分散的密钥、计费维度和 SDK 差异会快速吃掉工程与财务效率。统一转发将这些收口到一层。"
+                title="为什么需要聚合平台"
+                description="多模型并行试验已是常态，但分散的密钥、计费维度和 SDK 差异会快速吃掉工程与财务效率。聚合平台将这些收口到一层。"
               />
             </MotionReveal>
             <ul className="mt-16 grid gap-8 lg:grid-cols-3">
@@ -135,8 +135,8 @@ export function ModelGatewayProduct() {
             <MotionReveal>
               <SectionHeader
                 eyebrow="平台能力"
-                title="为生产环境准备的转发与控制面"
-                description="从接入到观测，能力与哲玄安全网关家族对齐设计理念，便于日后在「托管转发」与「私有化治理」之间平滑演进。"
+                title="为生产环境准备的聚合与控制面"
+                description="从接入到观测，能力与哲玄安全网关家族对齐设计理念，便于日后在「云端聚合平台」与「私有化治理」之间平滑演进。"
               />
             </MotionReveal>
             <div className="mt-16 grid gap-8 sm:grid-cols-2">
@@ -242,7 +242,7 @@ OPENAI_API_KEY=zx_live_xxxxxxxx`}
                     留下公司信息与预估调用量，我们将发送接入文档、模型清单与计价说明。
                   </p>
                   <a
-                    href="mailto:model-gateway@example.com?subject=统一模型转发%20-%20商务咨询"
+                    href="mailto:model-gateway@example.com?subject=大模型聚合平台%20-%20商务咨询"
                     className="mt-8 inline-flex items-center justify-center gap-2 rounded-xl bg-safe px-8 py-4 text-sm font-semibold text-navy shadow-lg shadow-safe/25 transition hover:-translate-y-0.5 hover:bg-emerald-400"
                   >
                     <Mail className="h-4 w-4" />
