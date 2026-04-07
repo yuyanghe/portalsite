@@ -9,9 +9,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "企业级大模型合规网关 | 安全拥抱生成式 AI",
+  title: {
+    default: "哲玄科技 · 企业级 AI 网关与基础设施",
+    template: "%s · 哲玄科技",
+  },
   description:
-    "实时脱敏、语义审计与自动化管控，确保企业核心资产不出域。支持私有化部署，满足金融级合规追溯要求。",
+    "哲玄科技提供大模型企业安全网关（私有化合规）与企业级统一模型转发（OpenAI 兼容托管）两大产品线。",
 };
 
 export default function RootLayout({

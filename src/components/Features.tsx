@@ -1,84 +1,110 @@
 import {
-  Database,
+  Activity,
+  Coins,
   GitBranch,
-  Layers,
   ShieldCheck,
+  Wallet,
+  Waypoints,
 } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { MotionReveal } from "@/components/ui/MotionReveal";
+import { SectionHeader } from "@/components/ui/SectionHeader";
+import { cn } from "@/lib/utils";
 
 const cards = [
   {
-    icon: Database,
-    title: "动态 DLP 脱敏引擎",
-    body: "毫秒级识别并拦截身份证、银行卡、证券代码等 100+ 种敏感数据。",
+    icon: Waypoints,
+    title: "多模型统一接入与智能分发",
+    body: "OpenAI 兼容的统一北向接口，支持多模型池、动态路由、健康检查与降级调度；按租户、应用与场景精细化切流，告别模型碎片化与单点故障。",
+    tag: "接入",
+  },
+  {
+    icon: Activity,
+    title: "全链路可观测",
+    body: "从模型视角、路由视角到组织与人员维度，统一展示 Token 消耗、耗时、错误与异常；对话与防护日志可关联追踪，沉淀为运营与排障依据。",
+    tag: "观测",
   },
   {
     icon: ShieldCheck,
-    title: "语义安全围栏",
-    body: "拦截 Prompt 注入攻击、角色扮演漏洞及非合规语意的输出。",
+    title: "安全合规治理",
+    body: "覆盖网络、内容与数据多维策略：动态 DLP 脱敏、语义安全围栏、Prompt 与输出治理；可与现有合规框架对齐，降低监管与舆情风险。",
+    tag: "合规",
   },
   {
     icon: GitBranch,
-    title: "不可篡改审计流",
-    body: "全量存储每一条 AI 交互日志，支持密文存储与审计导出，满足监管回溯。",
+    title: "审计流水与合规导出",
+    body: "全量交互留痕，支持密文存储与按项目期的审计导出，便于内外部稽核与监管取证（如交互过程追溯类要求）。",
+    tag: "审计",
   },
   {
-    icon: Layers,
-    title: "多模型统一路由",
-    body: "一个接口无缝对接 GPT-4、Claude 3、DeepSeek 及国内主流大模型，支持配额精准管控。",
+    icon: Coins,
+    title: "Token 配额与限流管控",
+    body: "按组织、部门、应用密钥与模型维度配置配额、并发与速率；实时熔断与预警，防止超预算与模型滥用导致的成本失控。",
+    tag: "配额",
   },
-];
+  {
+    icon: Wallet,
+    title: "账单与成本管理",
+    body: "多维度账单分摊、用量对账与成本归因；支持按模型、业务线或成本中心导出，支撑财务结算与 FinOps 看板。",
+    tag: "账单",
+  },
+] as const;
 
 export function Features() {
   return (
     <section
       id="features"
-      className="scroll-mt-24 px-4 py-20 sm:px-6 lg:px-8"
+      className="scroll-mt-24 py-24 sm:py-28 lg:py-32"
     >
-      <div className="mx-auto max-w-6xl">
-        <div className="mb-14 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-2xl">
-            <h2 className="text-2xl font-semibold tracking-wide text-slate-100 sm:text-3xl">
-              核心功能
-            </h2>
-            <p className="mt-3 text-slate-400 leading-relaxed tracking-wide">
-              以网关为中心，串联脱敏、语义策略与审计链路，形成可运营、可取证的企业级 AI 安全栈。
+      <Container>
+        <MotionReveal>
+          <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-16">
+            <SectionHeader
+              eyebrow="核心能力"
+              title="接入、观测、合规与运营，四条主线一体交付"
+              description="产品能力不只「管住模型」：先解决统一接入与分发，再叠加可观测与计费闭环，并以安全合规治理收口。可按路线图分阶段上线，避免一次性大而全却无法运营。"
+              className="lg:max-w-2xl"
+            />
+            <p className="max-w-md text-sm leading-relaxed text-slate-500 lg:text-right">
+              控制台集成路由配置、策略编排、观测大盘、配额与账单模块；也可通过 API 对接计费与财务系统。
             </p>
           </div>
-          <div className="hidden h-px flex-1 max-w-md bg-gradient-to-r from-transparent via-white/10 to-transparent md:block md:mb-3" />
-        </div>
+        </MotionReveal>
 
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {cards.map((c, idx) => (
-            <article
-              key={c.title}
-              className={`glass-panel relative animate-fade-in-up overflow-hidden rounded-xl p-7 transition hover:border-finance/25 ${
-                idx === 0
-                  ? "animate-in-delay-1"
-                  : idx === 1
-                    ? "animate-in-delay-2"
-                    : idx === 2
-                      ? "animate-in-delay-3"
-                      : "animate-in-delay-4"
-              }`}
-            >
-              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-finance/10 blur-2xl" />
-              <div className="relative flex gap-5">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-safe/30 bg-safe/10 text-safe">
-                  <c.icon className="h-5 w-5" strokeWidth={1.5} aria-hidden />
+            <MotionReveal key={c.title} delay={0.05 * idx}>
+              <article
+                className={cn(
+                  "glass-panel group relative h-full overflow-hidden rounded-2xl p-8 lg:p-8",
+                  "transition duration-300",
+                  "hover:-translate-y-1 hover:border-finance/35 hover:shadow-[0_24px_56px_-28px_rgba(37,99,235,0.38)]",
+                )}
+              >
+                <div className="pointer-events-none absolute -right-10 -top-10 h-36 w-36 rounded-full bg-finance/12 blur-2xl transition group-hover:bg-finance/18" />
+                <div className="relative flex flex-col gap-5">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-safe/30 bg-safe/10 text-safe transition group-hover:scale-105">
+                      <c.icon className="h-6 w-6" strokeWidth={1.5} aria-hidden />
+                    </div>
+                    <span className="rounded-md border border-white/10 bg-white/[0.04] px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-slate-500">
+                      {c.tag}
+                    </span>
+                  </div>
+                  <div>
+                    <h3 className="text-base font-semibold tracking-wide text-slate-100 sm:text-lg">
+                      {c.title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed tracking-wide text-slate-400">
+                      {c.body}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-lg font-semibold tracking-wide text-slate-100">
-                    {c.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-relaxed tracking-wide text-slate-400">
-                    {c.body}
-                  </p>
-                </div>
-              </div>
-            </article>
+              </article>
+            </MotionReveal>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

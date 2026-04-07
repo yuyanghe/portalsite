@@ -47,4 +47,15 @@ body {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--glass-border);
   }
+
+  .animate-flow-dash {
+    stroke-dashoffset: 0;
+    animation: flow-dash 22s linear infinite;
+  }
+
+  @keyframes flow-dash {
+    to {
+      stroke-dashoffset: -320;
+    }
+  }
 }
